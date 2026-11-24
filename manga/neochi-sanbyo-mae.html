@@ -7,7 +7,7 @@
 <meta name="description" content="ぱぐおの4コマ「寝落ち3秒前」。眠気にあらがえない。寝落ちする3秒前までを描く話。 パグのしっぽ（pug-o.jp）の4コマ本館でまとめ読みできます。" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="パグのしっぽ" />
-<meta property="og:title" content="寝落ち3秒前 | ぱぐおの4コマ | パグのしっぽ" />
+<meta property="og:title" content="寝落ち3秒前 | ぱぐおの4コマ図書館 | パグのしっぽ" />
 <meta property="og:description" content="ぱぐおの4コマ「寝落ち3秒前」。眠気にあらがえない。寝落ちする3秒前までを描く話。 パグのしっぽ（pug-o.jp）の4コマ本館でまとめ読みできます。" />
 <meta property="og:url" content="https://pug-o.jp/manga/neochi-sanbyo-mae.html" />
 <meta property="og:image" content="https://pug-o.jp/manga/images/neochi-sanbyo-mae-cover.webp" />
@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
 <meta name="theme-color" content="#fff8cd" />
 <link rel="stylesheet" href="../style.css" />
-<title>寝落ち3秒前 | ぱぐおの4コマ | パグのしっぽ</title>
+<title>寝落ち3秒前 | ぱぐおの4コマ図書館 | パグのしっぽ</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7738139416541721" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-669BYPTSKL"></script>
 <script>
@@ -26,6 +26,15 @@
   gtag('config', 'G-669BYPTSKL');
 </script>
 <style>
+.lib-main .page-head { background: linear-gradient(160deg, #2e4a3a, #22392c); }
+.lib-main .page-head h1, .lib-main .page-head p { color: #f5eeda; }
+.lib-main .page-head .domain { color: #c9a227; }
+.lib-main .page-head a { color: #f5eeda; }
+.lib-main { background: #f8f1de; }
+.ep-card { border: 1px solid #d8c9a8 !important; border-left: 10px solid #7a4a21 !important; border-radius: 4px 12px 12px 4px !important; box-shadow: 0 6px 0 #b08d57; background: #fffdf6 !important; }
+#waline .wl-cards { counter-reset: resnum; }
+#waline .wl-card-item { counter-increment: resnum; position: relative; }
+#waline .wl-card-item::before { content: counter(resnum); position: absolute; top: 6px; right: 8px; background: #2e4a3a; color: #f5eeda; font-size: 0.72rem; padding: 1px 7px; border-radius: 999px; }
 .manga-fig { max-width: 520px; margin: 0 auto; background:#fffaf3; border:1px solid #e8ddd8; border-radius:20px; padding:18px 14px; }
 .manga-fig img { width:100%; height:auto; border-radius:8px; }
 .ep-nav { display:flex; gap:10px; justify-content:space-between; max-width:640px; margin:26px auto 0; flex-wrap:wrap; }
@@ -59,10 +68,11 @@
 </nav>
 </div>
 </header>
-<main>
+<main class="lib-main">
 <div class="page-head">
 <div class="wrap">
-<p class="domain">4KOMA</p>
+<p class="domain">4KOMA LIBRARY</p>
+<p style="margin:0 0 6px; font-size:0.88rem;"><a href="./">ぱぐおの4コマ図書館</a> ＞ 「寝落ち3秒前」</p>
 <h1>「寝落ち3秒前」</h1>
 <p>ぱぐおの4コマ漫画だよ。</p>
 </div>
@@ -82,9 +92,19 @@
 <div class="ad-slot" style="display:none" aria-hidden="true"><!-- AdSense slot (enabled after approval) --></div>
 <nav class="ep-nav" aria-label="話の移動">
 <a href="orusuban-no-pro.html">← 前の話<br />「お留守番のプロ」</a>
-<a href="./">一覧へ戻る</a>
+<a href="./">図書館の一覧へ戻る</a>
 <a href="kankoki-wa-tatakai.html">次の話 →<br />「換毛期は、戦い」</a>
 </nav>
+<div style="max-width:640px; margin:34px auto 0;">
+<h2 style="font-size:1.15rem; margin:0 0 6px;">この話の感想（<span class="waline-comment-count" data-path="/manga/neochi-sanbyo-mae.html">0</span>件）</h2>
+<p style="line-height:1.9; margin:0 0 10px;">感想を書いてもらえると、ぱぐおのしっぽが揺れます。本文だけ書けば、そのまま表示されます。個人情報は書かないでください。</p>
+<div id="waline"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css" />
+<script type="module">
+  import { init } from 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js';
+  init({ el: '#waline', serverURL: 'https://paguo-waline.vercel.app', lang: 'ja', meta: [], requiredMeta: [], login: 'disable', imageUploader: false, search: false, pageSize: 100, commentSorting: 'oldest', pageview: true, path: '/manga/neochi-sanbyo-mae.html' });
+</script>
+</div>
 <h2 style="text-align:center; font-size:1.15rem; margin:34px 0 14px;">ほかの話も読む</h2>
 <div class="ep-grid">
 <article class="ep-card">
