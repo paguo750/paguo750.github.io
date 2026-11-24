@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
-<meta name="description" content="パグのキャラクター「ぱぐお」の4コマ漫画。ねむくて素直になれない、ゆるい日常の4コマをnoteで毎日連載中。第1話「しっぽは正直」の掲載と、全話のあらすじ・noteへのリンクをまとめたアーカイブがあります。" />
+<meta name="description" content="パグのキャラクター「ぱぐお」の4コマ漫画の本館。公開済みの全話を、前の話・次の話で続けてまとめ読みできます。新しい話は公開されしだい追加されます。" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="パグのしっぽ" />
-<meta property="og:title" content="ぱぐおの4コマ漫画（パグの日常）| パグのしっぽ" />
-<meta property="og:description" content="パグのキャラクター「ぱぐお」の4コマ漫画。ねむくて素直になれない、ゆるい日常の4コマをnoteで毎日連載中。第1話「しっぽは正直」の掲載と、全話のあらすじ・noteへのリンクをまとめたアーカイブがあります。" />
+<meta property="og:title" content="ぱぐおの4コマ漫画 | パグのしっぽ" />
+<meta property="og:description" content="パグのキャラクター「ぱぐお」の4コマ漫画の本館。公開済みの全話を、前の話・次の話で続けてまとめ読みできます。新しい話は公開されしだい追加されます。" />
 <meta property="og:url" content="https://pug-o.jp/manga/" />
 <meta property="og:image" content="https://pug-o.jp/images/ogp.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -16,22 +16,8 @@
 <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
 <meta name="theme-color" content="#fff8cd" />
 <link rel="stylesheet" href="../style.css" />
-<title>ぱぐおの4コマ漫画（パグの日常）| パグのしっぽ</title>
-<style>
-.page-head p { color: var(--ink); }
-.manga-card { background: #fffaf3; border: 1px solid #e8ddd8; border-radius: 20px; padding: 24px 18px; text-align: center; max-width: 480px; margin: 0 auto; color: #26231f;}
-.manga-card h2 { margin: 0 0 12px; font-size: 1.3rem;}
-.manga-card img { width: 100%; height: auto; border-radius: 8px;}
-.manga-note { color: var(--ink); max-width: 34em; margin: 22px auto 0; text-align: center; line-height: 1.9;}
-.ep-list { max-width: 640px; margin: 0 auto; text-align: left; }
-.ep { background:#fffaf3; border:1px solid #e8ddd8; border-radius:14px; padding:14px 16px; margin-bottom:10px; color:#26231f; }
-.ep h3 { margin:0 0 4px; font-size:1.02rem; }
-.ep p { margin:0; font-size:0.92rem; line-height:1.7; color:#45403a; }
-.ep .ep-meta { margin-top:6px; font-size:0.85rem; }
-.ep-summary { max-width: 34em; margin: 14px auto 0; line-height: 1.9; color: var(--ink); text-align: left; }
-</style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7738139416541721" crossorigin="anonymous"></script>
-<!-- Google tag (gtag.js) -->
+<title>ぱぐおの4コマ漫画 | パグのしっぽ</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7738139416541721" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-669BYPTSKL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -39,6 +25,22 @@
   gtag('js', new Date());
   gtag('config', 'G-669BYPTSKL');
 </script>
+<style>
+.manga-fig { max-width: 520px; margin: 0 auto; background:#fffaf3; border:1px solid #e8ddd8; border-radius:20px; padding:18px 14px; }
+.manga-fig img { width:100%; height:auto; border-radius:8px; }
+.ep-nav { display:flex; gap:10px; justify-content:space-between; max-width:640px; margin:26px auto 0; flex-wrap:wrap; }
+.ep-nav a { flex:1 1 30%; text-align:center; background:#fffaf3; border:1px solid #e8ddd8; border-radius:12px; padding:12px 8px; color:#26231f; text-decoration:none; font-size:0.92rem; line-height:1.6; }
+.ep-nav a:hover { border-color:#c9a227; }
+.ep-nav a.off { opacity:0.35; pointer-events:none; }
+.cta-box { max-width:640px; margin:30px auto 0; background:#fffaf3; border:1px solid #e8ddd8; border-radius:16px; padding:20px 18px; text-align:center; color:#26231f; }
+.cta-box p { line-height:1.9; margin:0 0 12px; }
+.cta-box .btn { margin:4px; }
+.ep-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; max-width:900px; margin:0 auto; }
+.ep-card { background:#fffaf3; border:1px solid #e8ddd8; border-radius:16px; padding:14px; color:#26231f; }
+.ep-card img { width:100%; height:auto; border-radius:10px; }
+.ep-card h3 { margin:10px 0 6px; font-size:1.02rem; line-height:1.5; }
+.ep-card p { margin:0 0 10px; font-size:0.9rem; line-height:1.7; color:#45403a; }
+</style>
 </head>
 <body>
 <header class="site">
@@ -57,76 +59,125 @@
 </nav>
 </div>
 </header>
-
 <main>
 <div class="page-head">
 <div class="wrap">
 <p class="domain">4KOMA</p>
 <h1>ぱぐおの4コマ</h1>
-<p>ぱぐおの4コマ漫画だよ。noteで毎日連載中。顔は知らんぷりでも、しっぽは正直なんだ。</p>
+<p>ぱぐおの4コマ漫画の本館だよ。見つけるのは note や SNS、読み込むのはここで。公開済みの話はぜんぶここで読めるよ。</p>
 </div>
 </div>
-
 <section class="block" style="padding-top:28px">
 <div class="wrap">
-<div class="manga-card">
-<h2>第1話「しっぽは正直」</h2>
-<img src="../images/4koma-01.jpg" alt="ぱぐおの4コマ 第1話「しっぽは正直」" width="800" height="1680" />
+<div class="ep-grid">
+<article class="ep-card">
+<a href="kotatsu-kara-derarenai.html"><img src="images/kotatsu-kara-derarenai-cover.webp" alt="ぱぐおの4コマ「こたつから出られない」のカバー" loading="lazy" /></a>
+<h3>「こたつから出られない」</h3>
+<p>こたつの魔力には勝てない。冬のぱぐおの話。</p>
+<a class="btn" href="kotatsu-kara-derarenai.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="hinatabokko-no-tokuseki.html"><img src="images/hinatabokko-no-tokuseki-cover.webp" alt="ぱぐおの4コマ「日向ぼっこの特等席」のカバー" loading="lazy" /></a>
+<h3>「日向ぼっこの特等席」</h3>
+<p>日向ぼっこの特等席は、絶対にゆずらない話。</p>
+<a class="btn" href="hinatabokko-no-tokuseki.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="carry-case-no-kehai.html"><img src="images/carry-case-no-kehai-cover.webp" alt="ぱぐおの4コマ「キャリーケースの気配」のカバー" loading="lazy" /></a>
+<h3>「キャリーケースの気配」</h3>
+<p>キャリーケースの気配に、ざわつくぱぐおの話。</p>
+<a class="btn" href="carry-case-no-kehai.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="atarashii-omocha.html"><img src="images/atarashii-omocha-cover.webp" alt="ぱぐおの4コマ「新しいおもちゃ」のカバー" loading="lazy" /></a>
+<h3>「新しいおもちゃ」</h3>
+<p>新しいおもちゃがやってきた日の、ぱぐおの反応の話。</p>
+<a class="btn" href="atarashii-omocha.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="kankoki-wa-tatakai.html"><img src="images/kankoki-wa-tatakai-cover.webp" alt="ぱぐおの4コマ「換毛期は、戦い」のカバー" loading="lazy" /></a>
+<h3>「換毛期は、戦い」</h3>
+<p>抜け毛の季節は戦場。パグの換毛期あるあるの話。</p>
+<a class="btn" href="kankoki-wa-tatakai.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="neochi-sanbyo-mae.html"><img src="images/neochi-sanbyo-mae-cover.webp" alt="ぱぐおの4コマ「寝落ち3秒前」のカバー" loading="lazy" /></a>
+<h3>「寝落ち3秒前」</h3>
+<p>眠気にあらがえない。寝落ちする3秒前までを描く話。</p>
+<a class="btn" href="neochi-sanbyo-mae.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="orusuban-no-pro.html"><img src="images/orusuban-no-pro-cover.webp" alt="ぱぐおの4コマ「お留守番のプロ」のカバー" loading="lazy" /></a>
+<h3>「お留守番のプロ」</h3>
+<p>お留守番はベテランの域。プロの流儀を見せる話。</p>
+<a class="btn" href="orusuban-no-pro.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="amaetai-kedo-ienai.html"><img src="images/amaetai-kedo-ienai-cover.webp" alt="ぱぐおの4コマ「甘えたいけど、言えない」のカバー" loading="lazy" /></a>
+<h3>「甘えたいけど、言えない」</h3>
+<p>甘えたい気持ちはあるのに、素直に言えない。ぱぐおらしい不器用な話。</p>
+<a class="btn" href="amaetai-kedo-ienai.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="nande-konna-toko-ni.html"><img src="images/nande-konna-toko-ni-cover.webp" alt="ぱぐおの4コマ「なんでこんなとこに！？」のカバー" loading="lazy" /></a>
+<h3>「なんでこんなとこに！？」</h3>
+<p>帰り道の続編。頭の上のポップコーンと、謎の声の話。</p>
+<a class="btn" href="nande-konna-toko-ni.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="ame-no-hi-wa-denai.html"><img src="images/ame-no-hi-wa-denai-cover.webp" alt="ぱぐおの4コマ「雨の日は、でない」のカバー" loading="lazy" /></a>
+<h3>「雨の日は、でない」</h3>
+<p>雨の日は一歩も外に出ない。固い決意と、しっぽの本音の話。</p>
+<a class="btn" href="ame-no-hi-wa-denai.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="gohan-mada.html"><img src="images/gohan-mada-cover.webp" alt="ぱぐおの4コマ「ごはん、まだ？」のカバー" loading="lazy" /></a>
+<h3>「ごはん、まだ？」</h3>
+<p>ごはんの時間が待ちきれなくて、時計とにらめっこするぱぐおの話。</p>
+<a class="btn" href="gohan-mada.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="kaerimichi-mo-eiga.html"><img src="images/kaerimichi-mo-eiga-cover.webp" alt="ぱぐおの4コマ「帰り道も、映画だし」のカバー" loading="lazy" /></a>
+<h3>「帰り道も、映画だし」</h3>
+<p>映画の帰り道も、余韻たっぷりなぱぐおの話。</p>
+<a class="btn" href="kaerimichi-mo-eiga.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="nisa-hajimeta.html"><img src="images/nisa-hajimeta-cover.webp" alt="ぱぐおの4コマ「NISA、はじめたし」のカバー" loading="lazy" /></a>
+<h3>「NISA、はじめたし」</h3>
+<p>ぱぐおがNISAをはじめた（？）という、ちょっと意外な話。</p>
+<a class="btn" href="nisa-hajimeta.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="osanpo-ikitakunaishi.html"><img src="images/osanpo-ikitakunaishi-cover.webp" alt="ぱぐおの4コマ「おさんぽ、いきたくないし」のカバー" loading="lazy" /></a>
+<h3>「おさんぽ、いきたくないし」</h3>
+<p>お散歩に誘われても、どうしても動きたくない。でも本当の気持ちは、しっぽが知っている話。</p>
+<a class="btn" href="osanpo-ikitakunaishi.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="popcorn-ga-saki-ni-owatta.html"><img src="images/popcorn-ga-saki-ni-owatta-cover.webp" alt="ぱぐおの4コマ「ポップコーンが、先に終わったし」のカバー" loading="lazy" /></a>
+<h3>「ポップコーンが、先に終わったし」</h3>
+<p>映画のお供のポップコーンが、本編より先に終わってしまう話。</p>
+<a class="btn" href="popcorn-ga-saki-ni-owatta.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="furokyan.html"><img src="images/furokyan-cover.webp" alt="ぱぐおの4コマ「風呂キャン」のカバー" loading="lazy" /></a>
+<h3>「風呂キャン」</h3>
+<p>お風呂の誘いを全力で回避する、風呂キャンセル界隈なぱぐおの話。</p>
+<a class="btn" href="furokyan.html">この話を読む</a>
+</article>
+<article class="ep-card">
+<a href="shippo-seijitsu.html"><img src="images/shippo-seijitsu-cover.webp" alt="ぱぐおの4コマ「しっぽは正直」のカバー" loading="lazy" /></a>
+<h3>「しっぽは正直」</h3>
+<p>「ねむいから、そっとしといて」と言いたいのに、しっぽだけは嬉しくて揺れてしまう。素直になれないぱぐおの、連載の始まりの話。</p>
+<a class="btn" href="shippo-seijitsu.html">この話を読む</a>
+</article>
 </div>
-<p class="ep-summary">第1話のあらすじ：「ねむいから、そっとしといて」。そう言いたいのに、飼い主さんに呼ばれると、しっぽだけは嬉しくて揺れてしまう。言葉は素直になれないけれど、しっぽは正直。パグのキャラクター「ぱぐお」の連載は、ここから始まったよ。</p>
-<p class="manga-note">続きは note で毎日更新中だよ。<br /><a class="btn" href="https://note.com/ripe_crane7609" target="_blank" rel="noopener" style="margin-top:10px">noteで連載を読む</a></p>
-</div>
-</section>
-
-<section class="block alt" aria-labelledby="archive-h">
-<div class="wrap">
-<div class="sec-head">
-<h2 id="archive-h">全話アーカイブ</h2>
-<p>パグのキャラクター「ぱぐお」の4コマ漫画、全話のタイトルとあらすじだよ。本編は note で毎日連載中。</p>
-</div>
-<div class="ep-list">
-<div class="ep"><h3>第1話「しっぽは正直」</h3><p>「ねむいから、そっとしといて」と言いたいのに、しっぽだけは嬉しくて揺れてしまう。素直になれないぱぐおの、第1話。</p><p class="ep-meta">このページで読めるよ</p></div>
-<div class="ep"><h3>第2話「風呂キャン」</h3><p>お風呂の誘いを全力で回避する、風呂キャンセル界隈なぱぐおの話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609/n/n7764e80807a0" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>第3話「おさんぽ、いきたくないし」</h3><p>お散歩に誘われても、どうしても動きたくない。でも本当の気持ちは、しっぽが知っている話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609/n/n8bcf2f55121f" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>第4話「ごはん、まだ？」</h3><p>ごはんの時間が待ちきれなくて、時計とにらめっこするぱぐおの話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609/n/ne49d44fd88e7" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>第5話「雨の日は、でない」</h3><p>雨の日は一歩も外に出ない。固い決意と、しっぽの本音の話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609/n/n454d8f98070f" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>第6話「寝落ち3秒前」</h3><p>眠気にあらがえない。寝落ちする3秒前までを描く話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609/n/n97ac9b577a6d" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>第7話「甘えたいけど、言えない」</h3><p>甘えたい気持ちはあるのに、素直に言えない。ぱぐおらしい不器用な話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>第8話「お留守番のプロ」</h3><p>お留守番はベテランの域。プロの流儀を見せる話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>第9話「換毛期は、戦い」</h3><p>抜け毛の季節は戦場。パグの換毛期あるあるの話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609/n/n8e73d4b62236" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>第10話「新しいおもちゃ」</h3><p>新しいおもちゃがやってきた日の、ぱぐおの反応の話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609/n/ndd8a3ed0f313" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>第11話「キャリーケースの気配」</h3><p>キャリーケースの気配に、ざわつくぱぐおの話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第12話「日向ぼっこの特等席」</h3><p>日向ぼっこの特等席は、絶対にゆずらない話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第13話「こたつから出られない」</h3><p>こたつの魔力には勝てない。冬のぱぐおの話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第14話「はつ雪、さむいし」</h3><p>初雪の日。寒がりなぱぐおの反応を描く話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第15話「マフラー、巻かれたし」</h3><p>マフラーを巻かれたぱぐおの、ちょっと誇らしげな話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第16話「あいつ、せんたく中」</h3><p>お気に入りの「あいつ」が洗濯されている間、そわそわするぱぐおの話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第17話「みかんの箱が、最高だし」</h3><p>みかんの段ボール箱が、最高の居場所になる話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第18話「窓に、肉球スタンプ」</h3><p>窓ガラスに、肉球のスタンプを残すぱぐおの話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第19話「大掃除から、かくれるし」</h3><p>大掃除の気配を感じて、身を隠すぱぐおの話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第20話「湯たんぽは、ゆずらない」</h3><p>湯たんぽの温もりは独り占めしたい、冬の夜の話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第21話「カレンダー、あと1枚だし」</h3><p>カレンダーが最後の1枚になった頃の、年末の話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第22話「くつした、かけたし」</h3><p>くつしたにまつわる、小さな事件の話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第23話「サンタさん、来たみたいだし」</h3><p>サンタさんが来たみたい。クリスマスの朝の話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第24話「年賀状、ボクの分は？」</h3><p>年賀状の季節。自分の分はあるのか、気になるぱぐおの話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第25話「あし、つめたくない？」</h3><p>寒い日の、足元の冷たさが気になる話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第26話「ツリー、だれが飾ったの？」</h3><p>クリスマスツリーを眺めるぱぐおの話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第27話「おもち、のびすぎじゃない？」</h3><p>のびるおもちに驚くぱぐおの話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第28話「テレビ、もう消しちゃうの？」</h3><p>テレビを消されるのが名残惜しい、夜の話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第29話「手袋、どこいったの？」</h3><p>片方の手袋を探す、小さな事件の話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第30話「カイロ、もう1個いる？」</h3><p>カイロの温もりが、もっと欲しくなる話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第31話「セーター、似合ってる？」</h3><p>セーターを着たぱぐおの話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第32話「イルミネーション、まぶしくない？」</h3><p>イルミネーションの明るさに、目を細めるぱぐおの話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>第33話「雪だるま、だれに似てる？」</h3><p>雪だるまが、誰かに似ている話。</p><p class="ep-meta">noteで順次公開中</p></div>
-<div class="ep"><h3>番外編「ポップコーンが、先に終わったし」</h3><p>映画のお供のポップコーンが、本編より先に終わってしまう話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609/n/n0d7711f8daf8" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>番外編「帰り道も、映画だし」</h3><p>映画の帰り道も、余韻たっぷりなぱぐおの話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609/n/n59ef0c9fe2eb" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>番外編「NISA、はじめたし」</h3><p>ぱぐおがNISAをはじめた（？）という、ちょっと意外な話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609/n/nc419f4759526" target="_blank" rel="noopener">noteで読む →</a></p></div>
-<div class="ep"><h3>番外編「なんでこんなとこに！？」</h3><p>帰り道の続編。頭の上のポップコーンと、謎の声の話。</p><p class="ep-meta"><a href="https://note.com/ripe_crane7609/n/ne5b07219605c" target="_blank" rel="noopener">noteで読む →</a></p></div>
-</div>
+<p style="text-align:center; margin-top:26px; line-height:1.9;">新しい話は、note などで公開されしだい、ここにも追加されるよ。<br />
+<a class="btn btn-ghost" href="https://note.com/ripe_crane7609" target="_blank" rel="noopener">noteで連載を追う</a></p>
 </div>
 </section>
 </main>
-
 <footer class="site">
 <div class="wrap">
 <div class="footer-in">
