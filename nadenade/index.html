@@ -96,6 +96,10 @@
 <p><button class="btn" id="nade-btn" type="button">なでなでする</button></p>
 <p class="nade-note">画像をタップしても数えるよ。頭・おなか・しっぽ、なでる場所で反応が変わるよ。</p>
 <p><a class="nade-share" id="nade-share" href="#" target="_blank" rel="noopener">Xで自慢する</a></p>
+<p class="nade-note" style="margin-top:16px">機種変更やブラウザ変更のときは、引き継ぎコードで続きから遊べるよ。</p>
+<p><button class="btn" id="nade-code-show" type="button">引き継ぎコードを出す</button></p>
+<p id="nade-code-out" style="display:none; font-size:1.3rem; font-weight:800; letter-spacing:0.12em; margin:4px 0;"></p>
+<p style="margin-top:10px"><input id="nade-code-in" type="text" placeholder="PG〜のコードを入力" autocomplete="off" style="padding:9px 12px; border:1px solid #d8ccc4; border-radius:10px; font-size:1rem; width:200px; max-width:70%;" /> <button class="btn" id="nade-code-load" type="button">コードで引き継ぐ</button></p>
 <p style="max-width:34em; margin:18px auto 0; line-height:1.9; color:var(--ink); text-align:left">「ぱぐおをなでなで」について：パグのキャラクター「ぱぐお」をタップしてなでる、なでなでカウンターだよ。なでるたびにしっぽが揺れて、ぱぐおのひとことも変わるよ。回数はこの端末に保存されるから、続きから数えられるよ。なでた回数でレベルと称号が育っていくから、少しずつ通ってみてね。素直になれない顔をしていても、しっぽは正直なんだ。</p>
 <p style="max-width:34em; margin:12px auto 0; line-height:1.9; color:var(--ink); text-align:left">遊び方：ボタンか画像をタップするたびに1回カウントされるよ。画像は、なでる場所（頭・おなか・しっぽ）でぱぐおの反応が変わるよ。たまにレアな反応もあるから、探してみてね。10回・50回・100回みたいな節目の回数や、レベルアップのときは特別なひとことが出るよ。「Xで自慢する」ボタンからは、回数と称号をそのまま投稿できるよ。本物のパグをなでるときは、驚かせないようにそっと、体に触れるのがコツだよ（ぱぐおはタップで大丈夫）。</p>
 <button class="nade-reset" id="nade-reset" type="button">カウンターをリセット</button>
@@ -261,6 +265,38 @@
     var xr = (ev.clientX - r.left) / r.width;
     var zone = xr < 0.38 ? "head" : (xr > 0.75 ? "tail" : "body");
     pet(zone, xr);
+  });
+  function encodeCode(c) {
+    var body = c.toString(36).toUpperCase();
+    var chk = ((c * 7 + 13) % 36).toString(36).toUpperCase();
+    return "PG" + body + chk;
+  }
+  function decodeCode(raw) {
+    if (!raw) { return null; }
+    var s = String(raw).replace(/[\s\-]/g, "").toUpperCase();
+    if (s.indexOf("PG") !== 0 || s.length < 4) { return null; }
+    var chk = s.charAt(s.length - 1);
+    var body = s.substring(2, s.length - 1);
+    if (!/^[0-9A-Z]+$/.test(body)) { return null; }
+    var c = parseInt(body, 36);
+    if (isNaN(c) || c < 0 || c > 999999) { return null; }
+    if (((c * 7 + 13) % 36).toString(36).toUpperCase() !== chk) { return null; }
+    return c;
+  }
+  document.getElementById("nade-code-show").addEventListener("click", function () {
+    var out = document.getElementById("nade-code-out");
+    out.textContent = encodeCode(count);
+    out.style.display = "block";
+    msgEl.textContent = "そのコード、メモしておいてね。新しい端末で入れれば続きからだし。";
+  });
+  document.getElementById("nade-code-load").addEventListener("click", function () {
+    var v = decodeCode(document.getElementById("nade-code-in").value);
+    if (v === null) { msgEl.textContent = "そのコード、違うみたいだし。"; return; }
+    if (v <= count) { msgEl.textContent = "今の記録の方が進んでるし。そのまま使う。"; return; }
+    count = v;
+    try { localStorage.setItem(KEY, String(count)); } catch (e) {}
+    render();
+    msgEl.textContent = "おかえり。続きからだし。";
   });
   document.getElementById("nade-reset").addEventListener("click", function () {
     count = 0;
