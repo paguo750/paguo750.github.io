@@ -28,6 +28,19 @@
 .nade-msg { font-size: 1.15rem; font-weight: 700; line-height: 1.8; min-height: 2.2em; margin: 14px 0 6px; color: #26231f;}
 .nade-note { color: #57534c; font-size: 0.92rem; margin: 10px 0 0;}
 .nade-reset { background: none; border: none; color: #57534c; font-size: 0.9rem; text-decoration: underline; cursor: pointer; padding: 6px;}
+.nade-level { font-size: 1.02rem; font-weight: 700; margin: 2px 0 8px; color: #7a4a21;}
+.nade-bar { height: 10px; background: #f1e4d8; border-radius: 999px; overflow: hidden; max-width: 340px; margin: 0 auto 6px;}
+.nade-bar i { display: block; height: 100%; background: #e8a2b8; border-radius: 999px; transition: width 0.3s ease;}
+.nade-next { font-size: 0.88rem; color: #57534c; margin: 0 0 4px;}
+.nade-today { font-size: 0.95rem; color: #57534c; margin: 0 0 10px;}
+.nade-stage { position: relative; display: inline-block;}
+.floaty { position: absolute; pointer-events: none; font-weight: 800; color: #e88bb0; animation: floatUp 0.9s ease-out forwards; z-index: 3;}
+.floaty.zzz { color: #8d9db6; font-size: 1.3rem; animation-duration: 1.6s;}
+@keyframes floatUp { 0% { opacity: 0; transform: translateY(0) scale(0.7);} 15% { opacity: 1;} 100% { opacity: 0; transform: translateY(-64px) scale(1.15);} }
+.nade-img.sleep { animation: sleepy 1.6s ease;}
+@keyframes sleepy { 0% { transform: rotate(0deg);} 30% { transform: rotate(-4deg) scale(0.98);} 70% { transform: rotate(-4deg) scale(0.98);} 100% { transform: rotate(0deg) scale(1);} }
+.nade-share { display: inline-block; margin-top: 10px; padding: 9px 22px; border: 2px solid #26231f; border-radius: 999px; color: #26231f; font-weight: 700; text-decoration: none; background: #fff;}
+.nade-share:hover { background: #fff3f6;}
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7738139416541721" crossorigin="anonymous"></script>
 <!-- Google tag (gtag.js) -->
@@ -72,12 +85,19 @@
 <div class="wrap">
 <div class="nade-card">
 <p class="nade-count">なでなで <b id="nade-num">0</b> 回</p>
-<img class="nade-img" id="nade-img" src="../images/paguo-main.png" alt="ぱぐお（タップでなでなで）" width="240" height="240" />
+<p class="nade-level" id="nade-level">Lv.1 なでなで見習い</p>
+<div class="nade-bar"><i id="nade-bar-fill" style="width:0%"></i></div>
+<p class="nade-next" id="nade-next"></p>
+<p class="nade-today" id="nade-today"></p>
+<div class="nade-stage" id="nade-stage">
+<img class="nade-img" id="nade-img" src="../images/paguo-main.png" alt="ぱぐお（タップでなでなで）" width="1025" height="465" />
+</div>
 <p class="nade-msg" id="nade-msg">……べつに、なでられ待ちじゃないし。</p>
 <p><button class="btn" id="nade-btn" type="button">なでなでする</button></p>
-<p class="nade-note">画像をタップしても数えるよ。</p>
-<p style="max-width:34em; margin:18px auto 0; line-height:1.9; color:var(--ink); text-align:left">「ぱぐおをなでなで」について：パグのキャラクター「ぱぐお」をタップしてなでる、なでなでカウンターだよ。なでるたびにしっぽが揺れて、ぱぐおのひとことも変わるよ。節目の回数では特別なひとことも。回数はこの端末に保存されるから、続きから数えられるよ。素直になれない顔をしていても、しっぽは正直なんだ。</p>
-<p style="max-width:34em; margin:12px auto 0; line-height:1.9; color:var(--ink); text-align:left">遊び方：ボタンか画像をタップするたびに1回カウントされるよ。10回・50回・100回みたいな節目の回数では、ぱぐおのひとことが特別なものに変わるから、探してみてね。本物のパグをなでるときは、驚かせないようにそっと、体に触れるのがコツだよ（ぱぐおはタップで大丈夫）。</p>
+<p class="nade-note">画像をタップしても数えるよ。頭・おなか・しっぽ、なでる場所で反応が変わるよ。</p>
+<p><a class="nade-share" id="nade-share" href="#" target="_blank" rel="noopener">Xで自慢する</a></p>
+<p style="max-width:34em; margin:18px auto 0; line-height:1.9; color:var(--ink); text-align:left">「ぱぐおをなでなで」について：パグのキャラクター「ぱぐお」をタップしてなでる、なでなでカウンターだよ。なでるたびにしっぽが揺れて、ぱぐおのひとことも変わるよ。回数はこの端末に保存されるから、続きから数えられるよ。なでた回数でレベルと称号が育っていくから、少しずつ通ってみてね。素直になれない顔をしていても、しっぽは正直なんだ。</p>
+<p style="max-width:34em; margin:12px auto 0; line-height:1.9; color:var(--ink); text-align:left">遊び方：ボタンか画像をタップするたびに1回カウントされるよ。画像は、なでる場所（頭・おなか・しっぽ）でぱぐおの反応が変わるよ。たまにレアな反応もあるから、探してみてね。10回・50回・100回みたいな節目の回数や、レベルアップのときは特別なひとことが出るよ。「Xで自慢する」ボタンからは、回数と称号をそのまま投稿できるよ。本物のパグをなでるときは、驚かせないようにそっと、体に触れるのがコツだよ（ぱぐおはタップで大丈夫）。</p>
 <button class="nade-reset" id="nade-reset" type="button">カウンターをリセット</button>
 </div>
 </div>
@@ -110,12 +130,40 @@
 <script>
 (function () {
   var KEY = "paguo-nadenade-count";
+  var TKEY = "paguo-nadenade-today";
   var count = 0;
   try { count = parseInt(localStorage.getItem(KEY) || "0", 10) || 0; } catch (e) { count = 0; }
+  function todayStr() { var d = new Date(); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); }
+  var today = 0;
+  try {
+    var t = JSON.parse(localStorage.getItem(TKEY) || "null");
+    if (t && t.date === todayStr()) { today = t.n || 0; }
+  } catch (e) { today = 0; }
   var numEl = document.getElementById("nade-num");
   var msgEl = document.getElementById("nade-msg");
   var imgEl = document.getElementById("nade-img");
-  var lines = [
+  var stageEl = document.getElementById("nade-stage");
+  var levelEl = document.getElementById("nade-level");
+  var barEl = document.getElementById("nade-bar-fill");
+  var nextEl = document.getElementById("nade-next");
+  var todayEl = document.getElementById("nade-today");
+  var shareEl = document.getElementById("nade-share");
+  var LEVELS = [
+    { at: 0, name: "なでなで見習い" },
+    { at: 10, name: "なでなで係" },
+    { at: 30, name: "なでなで上手" },
+    { at: 60, name: "なでなで職人" },
+    { at: 100, name: "なでなで師範" },
+    { at: 200, name: "なでなで仙人" },
+    { at: 500, name: "しっぽの理解者" },
+    { at: 1000, name: "なでなでレジェンド" }
+  ];
+  function levelOf(c) {
+    var lv = 0;
+    for (var i = 0; i < LEVELS.length; i++) { if (c >= LEVELS[i].at) { lv = i; } }
+    return lv;
+  }
+  var linesBody = [
     "……べつに、うれしくないし。",
     "しっぽは正直だけど、顔は平気だし。",
     "もう1回だけなら、許す。",
@@ -127,25 +175,100 @@
     "……もっとでも、いいよ。",
     "今日は特別だよ。たぶん。"
   ];
-  function render() { numEl.textContent = count; }
-  function pet() {
+  var linesHead = [
+    "頭は、まあ、許すし。",
+    "……耳のうしろ、わかってるね。",
+    "べつに、頭なでられ待ちじゃないし。",
+    "そこ、いいとこだし。",
+    "……ふふん、悪くないし。",
+    "頭なでると、しっぽまで届くんだって。"
+  ];
+  var linesTail = [
+    "しっぽは触らなくても揺れるし。",
+    "……しっぽばっかり見てるし。",
+    "正直者で、困るし。",
+    "しっぽは嘘つけないんだって。",
+    "……揺れてるのは、気のせいだし。",
+    "しっぽばっかり、ずるいし。"
+  ];
+  function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+  function spawnFloaty(text, xRatio, cls) {
+    var s = document.createElement("span");
+    s.className = "floaty" + (cls ? " " + cls : "");
+    s.textContent = text;
+    s.style.left = (xRatio * 100) + "%";
+    s.style.bottom = "18%";
+    s.style.fontSize = (0.9 + Math.random() * 0.5) + "rem";
+    stageEl.appendChild(s);
+    setTimeout(function () { s.remove(); }, 1700);
+  }
+  function render() {
+    numEl.textContent = count;
+    var lv = levelOf(count);
+    levelEl.textContent = "Lv." + (lv + 1) + " " + LEVELS[lv].name;
+    if (lv < LEVELS.length - 1) {
+      var cur = LEVELS[lv].at, nxt = LEVELS[lv + 1].at;
+      barEl.style.width = Math.round((count - cur) / (nxt - cur) * 100) + "%";
+      nextEl.textContent = "次のレベルまで あと " + (nxt - count) + " 回";
+    } else {
+      barEl.style.width = "100%";
+      nextEl.textContent = "最高レベル到達。しっぽが認めた証拠だし。";
+    }
+    todayEl.textContent = "今日のなでなで " + today + " 回";
+    var text = "ぱぐおを " + count + " 回なでたし。Lv." + (lv + 1) + "「" + LEVELS[lv].name + "」 #ぱぐお #なでなで";
+    shareEl.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text) + "&url=" + encodeURIComponent("https://pug-o.jp/nadenade/");
+  }
+  function pet(zone, xRatio) {
+    var prevLv = levelOf(count);
     count++;
-    try { localStorage.setItem(KEY, String(count)); } catch (e) {}
+    today++;
+    try {
+      localStorage.setItem(KEY, String(count));
+      localStorage.setItem(TKEY, JSON.stringify({ date: todayStr(), n: today }));
+    } catch (e) {}
     render();
-    if (count === 10) { msgEl.textContent = "10回も……暇なの？ べつに、うれしいけど。"; }
-    else if (count === 50) { msgEl.textContent = "50回。もう認める、うれしい。"; }
-    else if (count === 100) { msgEl.textContent = "100回！ しっぽが取れそう……。"; }
+    var lv = levelOf(count);
+    if (lv > prevLv) {
+      msgEl.textContent = "レベルアップ！ Lv." + (lv + 1) + "「" + LEVELS[lv].name + "」だし。……べつに、通ってくれてうれしい、とかじゃないし。";
+      spawnFloaty("LEVEL UP", 0.42, "");
+    } else if (count === 50) { msgEl.textContent = "50回。もう認める、うれしい。"; }
     else if (count > 100 && count % 100 === 0) { msgEl.textContent = count + "回！ きみ、なでなでの才能あるね。"; }
-    else { msgEl.textContent = lines[Math.floor(Math.random() * lines.length)]; }
+    else if (Math.random() < 0.05) {
+      msgEl.textContent = "……すやぁ。ねちゃったし。";
+      imgEl.classList.remove("sleep");
+      void imgEl.offsetWidth;
+      imgEl.classList.add("sleep");
+      spawnFloaty("Zzz", 0.25, "zzz");
+      return;
+    }
+    else if (zone === "head") { msgEl.textContent = pick(linesHead); }
+    else if (zone === "tail") { msgEl.textContent = pick(linesTail); }
+    else {
+      var pool = linesBody.slice();
+      var h = new Date().getHours();
+      if (h >= 22 || h < 5) { pool.push("夜更かし、だし。……付き合うけど。"); }
+      if (h >= 5 && h < 10) { pool.push("……おはよう、だし。早いね。"); }
+      msgEl.textContent = pick(pool);
+    }
+    spawnFloaty("♡", (xRatio == null ? 0.3 + Math.random() * 0.4 : xRatio), "");
     imgEl.classList.remove("wag");
     void imgEl.offsetWidth;
     imgEl.classList.add("wag");
   }
-  document.getElementById("nade-btn").addEventListener("click", pet);
-  imgEl.addEventListener("click", pet);
+  document.getElementById("nade-btn").addEventListener("click", function () { pet("body", null); });
+  imgEl.addEventListener("click", function (ev) {
+    var r = imgEl.getBoundingClientRect();
+    var xr = (ev.clientX - r.left) / r.width;
+    var zone = xr < 0.38 ? "head" : (xr > 0.75 ? "tail" : "body");
+    pet(zone, xr);
+  });
   document.getElementById("nade-reset").addEventListener("click", function () {
     count = 0;
-    try { localStorage.setItem(KEY, "0"); } catch (e) {}
+    today = 0;
+    try {
+      localStorage.setItem(KEY, "0");
+      localStorage.setItem(TKEY, JSON.stringify({ date: todayStr(), n: 0 }));
+    } catch (e) {}
     render();
     msgEl.textContent = "……べつに、さみしくないし。";
   });
